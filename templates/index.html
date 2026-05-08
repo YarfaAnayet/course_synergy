@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+  <title>Course Synergy – Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=1) }}">
+</head>
+<body>
+   <div class="container">
+        <div class="college">Government Polytechnic for Women, Srinagar</div>
+        <div class="logo">
+            <img src="{{ url_for('static', filename='images/GWPlogo.png') }}" alt="GWP Logo">
+        </div>
+        <h1>Course Synergy</h1>
+        <h2>
+            Pre-requisite and Roadmap Visualizer
+        </h2>
+        
+        <p>
+            Course Synergy is an academic roadmap visualizer that helps students understand 
+            course structure, prerequisites, semester flow and career options using 
+            interactive graphs.
+        </p>
+        
+        <div class="btn">
+            <a href="{{ url_for('qualification_page') }}">
+                Explore Courses -->
+            </a>
+        </div>
+    </div>
+    <section class="features">
+
+<h2 class="section-title">Why Course Synergy?</h2>
+
+<div class="features-container">
+
+<div class="feature-box">
+<h3>Interactive Dependency Graphs</h3>
+<p>
+Visual representation of course prerequisites with semester-wise 
+organization and clear pathways through complex degree requirements.
+</p>
+</div>
+
+<div class="feature-box">
+<h3>Unlocked Course Detection</h3>
+<p>
+Automatically identifies available courses based on student's 
+completed subjects and current academic standing.
+</p>
+</div>
+
+<div class="feature-box">
+<h3>Detailed Syllabus View</h3>
+<p>
+Comprehensive subject information including learning outcomes, 
+credit hours, and career relevance.
+</p>
+</div>
+
+<div class="feature-box">
+<h3>Career Path Mapping</h3>
+<p>
+Visual connections between academic choices and future opportunities 
+in various industries.
+</p>
+</div>
+
+</div>
+
+</section>
+</body>
+</html>

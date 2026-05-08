@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Subject Details</title>
+</head>
+<body>
+
+  <div class="topbar">
+    <div>
+      <div class="topbar-title">Course Synergy</div>
+      <div class="topbar-sub">Subject details</div>
+    </div>
+    <div class="top-links">
+      <a href="{{ url_for('home') }}">Dashboard</a>
+      <a href="{{ url_for('courses_page') }}">Courses</a>
+      <a href="{{ url_for('roadmap', course_id=course_id) }}">Roadmap</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+  <h1>{{ subject.name }}</h1>
+
+  <p><b>Semester:</b> {{ subject.semester }}</p>
+
+  <p><b>Prerequisite:</b>
+     {% if subject.prerequisites %}
+       {{ subject.prerequisites }}
+     {% else %}
+       None
+     {% endif %}
+  </p>
+
+  <h3>Syllabus</h3>
+  <p>{{ subject.syllabus }}</p>
+
+  <h3>Course Outcome</h3>
+  <p>{{ subject.outcome }}</p>
+
+  <h3>Career Opportunities</h3>
+
+  <h3>Career Opportunities</h3>
+
+  {% if career is not none %}
+    <p><b>Job:</b> {{ career.job }}</p>
+    <p><b>Higher Studies:</b> 
+  {{ career.education }}</p>
+    <p><b>Entrepreneurship:</b> 
+  {{ career.entrepreneurship }}</p>
+  {% else %}
+    <p>No career data available for this course.</p>
+  {% endif %}
+</div>
+
+
+  <br> 
+  <a href="{{ url_for('roadmap', course_id=course_id) }}" class="btn-secondary">Back to Roadmap</a>
+
+
+</body>
+</html>

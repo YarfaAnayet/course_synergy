@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Select Qualification – Course Synergy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="containerr">
+    <div class="qualBox">
+      <h1 class="head">Select Your Qualification</h1>
+      <p class="para">
+        Choose your highest qualification so we can show you the appropriate diploma 
+        departments and entry options.
+      </p>
+
+      <form id="qual-form">
+        <label>
+          <input type="radio" name="qualification" value="10th" required>
+          <span>10th</span>
+        </label>
+
+         <label>
+          <input type="radio" name="qualification" value="12_arts_commerce">
+          <span>12th (Arts / Commerce)</span>
+        </label>
+
+         <label>
+          <input type="radio" name="qualification" value="12_pcb">
+          <span>12th (Physics, Chemistry, Biology)</span>
+        </label>
+
+        <label>
+          <input type="radio" name="qualification" value="12_pcm">
+         <span>12th (Physics, Chemistry, Maths)</span>
+        </label>
+
+        <button type="submit" class="btnn">                                                                                                                                              
+          Continue
+        </button>
+      </form>
+      <br>
+      <a href="{{ url_for('home') }}" class="btnn-secondary">Back to Dashboard</a>
+    </div>
+  </div>
+  <script>
+    const form = document.getElementById('qual-form');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const value = new FormData(form).get('qualification');
+      if (value) {
+        // redirect to courses with qualification as query parameter
+        window.location.href = "/courses?qual=" + encodeURIComponent(value);
+      }
+    });
+  </script>
+</body>
+</html>

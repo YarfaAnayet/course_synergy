@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Semester {{ semester }} - {{ course_name }}</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <div class="sem-name">{{ course_name }}</div>
+        <div class="sem-name">Semester {{ semester }}</div>
+        
+        <!-- Subject Graph -->
+        <div id="subject-graph"></div>
+        
+        <script id="subj-data" type="application/json">
+            {{ subject_graph_json | safe }}
+        </script>
+                     
+        <br>
+        
+    </div>
+    
+    <script>
+        const subjDataEl = document.getElementById('subj-data');
+        const subjJSON = JSON.parse(subjDataEl.textContent);
+        Plotly.newPlot('subject-graph', subjJSON.data, subjJSON.layout);
+        
+        const subjDiv = document.getElementById('subject-graph');
+        subjDiv.on('plotly_click', function(data) {
+            const pt = data.points[0];
+            const sid = pt.customdata;
+            if (sid) {
+                window.location.href = "/syllabus/" + sid;
+            }
+        });
+    </script>
+
+    <div class="back-button-container">
+        <a href="{{ url_for('roadmap', course_id=course_id) }}" class="btn-secondaryy">
+            Back to Roadmap
+        </a>
+        </div>
+</body>
+</html>

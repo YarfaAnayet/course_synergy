@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Select Course – Course Synergy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+
+    <h1>Select a Course</h1>
+
+    <p class="selected">
+      Qualification selected:
+      {% if qual == '10th' %}10th
+      {% elif qual == '12_arts_commerce' %}12th (Arts / Commerce)
+      {% elif qual == '12_pcb' %}12th (Physics, Chemistry, Biology)
+      {% elif qual == '12_pcm' %}12th (Physics, Chemistry, Maths)
+      {% else %}Not specified{% endif %}
+    </p>
+
+    {% if qual == '12_pcm' %}
+      <p class="note">
+        Note: With PCM, you are eligible for lateral entry (starting from 3rd semester)
+        only in selected departments. For MLT, GT and OMCA, syllabus starts from
+        1st semester.
+      </p>
+    {% endif %}
+
+    <!-- Course tiles -->
+    <div class="course-grid">
+      {% for c in courses %}
+        {% set cid = c.course_id|string %}
+        <div class="course-tile">
+          <div class="course-tile-title">{{ c.name }}</div>
+
+          {% if lateral_entry_allowed[cid.upper()] %}
+            <div class="course-tile-meta" >
+              Lateral Entry (starts from 3rd semester)
+            </div>
+            <a href="{{ url_for('roadmap', course_id=cid, entry='lateral') }}"
+               class="btn-secondary-view">
+              View Lateral Entry Roadmap
+            </a>
+          {% else %}
+            <a href="{{ url_for('roadmap', course_id=cid, entry='normal') }}"
+               class="btn-view">
+              View Roadmap
+            </a>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <br>
+    <a href="{{ url_for('qualification_page') }}" class="btn-secondary">
+      Back to Qualification
+    </a>
+
+  </div>
+
+  <script>
+    const select = document.getElementById('course-select');
+  select.addEventListener('change', function () {
+    const courseId = this.value;
+    if (courseId) {
+      window.location.href = "/roadmap/" + courseId;
+    }
+  });
+  </script>
+ 
+</body>
+</html>

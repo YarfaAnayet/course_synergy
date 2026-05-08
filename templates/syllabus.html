@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ subject.name }} – Syllabus</title>
+
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+  <h2>{{ subject.name }} – Syllabus</h2>
+
+ <div class="subject-info top-info">
+    <h3>Prerequisite</h3>
+    <p>{{ subject.prerequisites }}</p>
+</div>
+
+  <!-- GRAPH -->
+  <div id="syllabus-graph"></div>
+
+  <div class="subject-info bottom-info">
+    <h3>Outcome</h3>
+    <p>{{ subject.outcome.replace(';', '<br>') | safe }}</p>
+</div>
+
+  <!-- GRAPH DATA -->
+  <script id="syllabus-data" type="application/json">
+    {{ syllabus_graph_json | safe }}
+  </script>
+
+  <!-- MODAL -->
+  <div id="overlay" class="overlay">
+    <div class="modal-box">
+      <span id="close-btn">&times;</span>
+      <div id="modal-content">Click a unit to view content</div>
+    </div>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const dataEl = document.getElementById('syllabus-data');
+    const graphJSON = JSON.parse(dataEl.textContent);
+
+    Plotly.newPlot('syllabus-graph', graphJSON.data, graphJSON.layout,
+    {responsive: true}
+    );
+
+    const graphDiv = document.getElementById('syllabus-graph');
+    const overlay = document.getElementById("overlay");
+    const closeBtn = document.getElementById("close-btn");
+
+    // CLICK ON GRAPH
+    graphDiv.on('plotly_click', function(data) {
+      const content = data.points[0].customdata;
+
+      if (content) {
+        const formatted = content
+          .split(/(\d+\.\d+)/)
+          .map((item, i) => {
+            if (i % 2 === 1) {
+              return "<br><br><b>" + item + "</b>";
+            }
+            return " " + item;
+          })
+          .join("");
+
+        document.getElementById("modal-content").innerHTML =
+          "<h3>Unit Content</h3>" + formatted;
+
+        overlay.style.display = "flex";
+      }
+    });
+
+    // CLOSE BUTTON
+    closeBtn.addEventListener("click", function(e) {
+      e.stopPropagation();
+      overlay.style.display = "none";
+    });
+
+    // CLICK OUTSIDE
+    overlay.addEventListener("click", function(e) {
+      if (e.target === overlay) {
+        overlay.style.display = "none";
+      }
+    });
+
+    // ESC KEY CLOSE
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") {
+        overlay.style.display = "none";
+      }
+    });
+  </script>
+
+</body>
+</html>

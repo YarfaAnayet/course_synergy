@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ course_name }} – Roadmap</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+<body>
+  <div class="topbar">
+    <div>
+      <div class="topbar-title">Course Synergy</div>
+      <div class="topbar-sub">{{ course_name }}</div>
+    </div>
+    <div class="top-links">
+      <a href="{{ url_for('home') }}">Dashboard</a>
+      <a href="{{ url_for('courses_page') }}">Courses</a>
+    </div>
+  </div>
+
+  <div class="container">
+
+    <h1 class="c-name">{{ course_name }} – Roadmap</h1>
+
+{% if course_info %}
+  <div class="card-box1";>
+
+        <h2 class="Overview">Course Overview</h2>
+        <p class="c-info">
+          {{ course_info.description }}
+        </p>
+  </div>
+  <div class="card-box2";>
+        <h3>Key Skills You Will Learn</h3>
+        <p class="c-info">
+          {{ course_info.skills }}
+        </p>     
+  </div>
+{% endif %}
+
+<!-- SEMESTER NODE GRAPH -->
+<h2>Semester Flow</h2>
+<div id="sem-graph"></div>
+
+<script id="sem-data" type="application/json">
+  {{ sem_graph_json | safe }}
+</script>
+
+<script>
+  const semDataElement = document.getElementById('sem-data');
+  const semJSON = JSON.parse(semDataElement.textContent);
+  Plotly.newPlot('sem-graph', semJSON.data, semJSON.layout);
+
+  const semDiv = document.getElementById('sem-graph');
+  semDiv.on('plotly_click', function(data) {
+    const pt = data.points[0];
+    const sem = pt.customdata;
+    if (sem) {
+      window.location.href = "/semester/{{ course_id }}/" + sem;
+    }
+  });
+</script>
+
+<!-- CAREER PATH-->
+<h2>Career Path </h2>
+
+<div class="career-options">
+    <button onclick="showCareer('job')">Jobs</button>
+
+    <button onclick="showCareer('education')">Education</button>
+
+    <button onclick="showCareer('entrepreneurship')">
+        Entrepreneurship
+    </button>
+</div>
+
+<div id="careerModal" class="career-modal">
+
+    <div class="career-modal-content">
+
+        <span class="close-btn" onclick="closeCareer()">
+            &times;
+        </span>
+
+        <div id="career-result"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+const careerData = {
+    job: `{{ career_data.job }}`,
+    education: `{{ career_data.education }}`,
+    entrepreneurship: `{{ career_data.entrepreneurship }}`
+};
+
+function showCareer(type){
+
+    let items = careerData[type].split(",");
+
+    let html = "";
+
+    items.forEach(item => {
+        html += `<div class="career-item">${item.trim()}</div>`;
+    });
+
+    document.getElementById("career-result").innerHTML = html;
+
+    document.getElementById("careerModal").style.display = "flex";
+}
+
+function closeCareer(){
+    document.getElementById("careerModal").style.display = "none";
+}
+
+</script>
+
+</div>
+   
+</body>        
+</html>
