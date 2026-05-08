@@ -163,14 +163,14 @@ def build_semester_graph(semesters):
         ),
 
         textfont=dict(
-            size=100,
+            size=70,
             color="white"
         ),
 
         hoverinfo="text",
         hoverlabel=dict(
             font=dict(
-                size=50
+                size=20
             )
         ),
         hovertext=[f"Click to open Semester {s}" for s in semesters]
@@ -184,7 +184,7 @@ def build_semester_graph(semesters):
             autorange="reversed"   
         ),
 
-        height=max(500, len(semesters)*300),
+        height=max(500, len(semesters)*155),
 
         margin=dict(l=100, r=100, t=60, b=40),
 
@@ -218,12 +218,12 @@ def build_semester_subject_graph(subjects):
             color=colors[:len(subjects)],
             line=dict(color='#ffffff', width=1)
         ),
-        textfont=dict(size=80, color='white'),
+        textfont=dict(size=70, color='white'),
         hoverinfo='text',
         hovertext=[f"<b>{s['name']}</b><br>Subject ID: {s['subject_id']}<br>Click to view syllabus" for s in subjects],
         hoverlabel=dict(
             font=dict(
-                size=30
+                size=20
             )
         )
     ))
@@ -245,7 +245,7 @@ def build_semester_subject_graph(subjects):
 
     xaxis_title="",
     yaxis_title="",
-    height=max(500, len(subjects) * 200),
+    height=max(500, len(subjects) * 155),
 
     xaxis=dict(showticklabels=False, showgrid=False, zeroline=False),
     yaxis=dict(tickfont=dict(size=12), automargin=True),
@@ -301,7 +301,7 @@ def build_syllabus_graph(units):
 
         xaxis=dict(showticklabels=False, showgrid=False, zeroline=False),
 
-        height=max(500, len(units) * 200),
+        height=max(500, len(units) * 155),
 
         margin=dict(l=200, r=50, t=80, b=30),
 

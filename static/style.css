@@ -399,13 +399,14 @@ h3 {
   background: #861476;
   border-radius: 12px;
   border: 1px solid #641010;
-  padding: 40px;
-  width: 90%;
-  margin: 20px auto;
+  padding: 20px;
+  width: 85%;
+  min-height: 220px;
+  margin: 15px auto;
   position: relative;
   text-align: center;
   box-shadow: 10px 20px 30px rgba(255, 255, 255, 0.749);
-  font-size:1.8rem;
+  font-size:1.2rem;
   font-family: tahoma, sans-serif;
   letter-spacing: 3px;
 }
@@ -413,13 +414,14 @@ h3 {
   background: #861476;
   border-radius: 12px;
   border: 1px solid #641010;
- padding: 40px;
-  width: 90%;
-  margin: 20px auto;
+  padding: 20px;
+  width: 85%;
+  min-height: 220px;
+  margin: 15px auto;
   position: relative;
   text-align: center;
   box-shadow: 10px 20px 30px rgba(255, 255, 255, 0.749);
-  font-size:1.8rem;
+  font-size:1.2rem;
   font-family: tahoma, sans-serif;
   letter-spacing: 3px;
 }
@@ -428,10 +430,10 @@ h3 {
 .course-grid {
   display:grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 60px;
+  column-gap: 25px;
   row-gap: 10px;
   margin-top: 10px;
-  margin-left: 90px;
+  margin-left: 20px;
   padding: 20px;
 }
 .selected{
@@ -459,15 +461,15 @@ h3 {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-height: 380px;
+  width: 85%;
+  min-height: 220px;
   text-align: center;
   font-size:1.8rem;
   font-family: tahoma, sans-serif;
   font-weight:bold;
   letter-spacing: 3px;
   color:#ffffff;
-  margin-top: 0.02vh;
-  margin-bottom:5vh;
+  margin: 15px auto;
   background: rgba(169, 27, 27, 0.2);
   border-radius: 40px;
   padding: 20px;
@@ -817,8 +819,44 @@ a:hover {
         font-size: 1rem;
     }
 
-    h1{
+    .qualification-container,
+    .selection-container,
+    .glass-container {
+        width: 90%;
+        padding: 20px;
+        margin: 20px auto;
+    }
+
+    h1 {
         font-size: 2rem !important;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+
+    .subtitle,
+    p {
+        font-size: 1rem;
+        line-height: 1.4;
+        margin-bottom: 20px;
+    }
+
+    .qualification-option,
+    .option-card,
+    .radio-option {
+        height: 70px !important;
+        padding: 10px 15px;
+        margin: 15px 0;
+    }
+
+    .qualification-option label,
+    .option-card label,
+    .radio-option label {
+        font-size: 1rem;
+    }
+
+    input[type="radio"] {
+        width: 20px;
+        height: 20px;
     }
 
     h2{
@@ -833,12 +871,20 @@ a:hover {
         margin-left: 0;
         padding: 10px;
     }
+    .card-box1,
+    .card-box2{
+      width: 90%;
+      min-height: 180px;
+      padding: 15px;
+      font-size: 1rem;
+    }
 
     .course-tile{
         width: 90%;
         margin: 20px auto;
-        min-height: auto;
-        font-size: 1.2rem;
+        min-height: 180px;
+        padding: 15px;
+        font-size: 1rem;
     }
 
     .career-options{
