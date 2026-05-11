@@ -155,20 +155,19 @@ body{
   }
     /* ---------- Qualification page ---------- */
 .containerr{
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    padding: 20px;
     background-size:auto;
 
 }
 .qualBox{
-    width: 70%;
-    max-width: 900px;
-    padding: 25px;
+    width: 500%;
+    max-width: 70%;
+    padding: 30px 25px;
     height: 85vh;
-    margin: 20px auto;
-    overflow-y: auto;
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
@@ -187,16 +186,19 @@ body{
 
 .head{
     text-align: center;
+    margin-bottom: 10px;
+    font-weight: bold;
     font-family: Arial black;
-    font-size:clamp(1.7em, 4vw, 2em);
+    font-size:clamp(1.7rem, 4vw, 2rem);
 }
 .head:hover{
-  font-size:clamp(1.8em, 4.2vw, 2.2em);
+  font-size:clamp(1.8rem, 4.2vw, 2.2rem);
 }
 .para{
     font-size:clamp(1rem, 1.5vw, 1.2rem);
     color:red;
-    margin-bottom:60px;
+    margin-bottom:25px;
+    line-height: 1.5;
     text-align: center;
 }
 label{
@@ -232,16 +234,16 @@ label{
 }
 
 #qual-form label {
-display: block;
+display: flex;
+align-items: center;
 width: 80%;
 border-radius: 40%;
-margin: 20px auto;
-padding: 10px;
+margin: 15px 0;
+padding: 12px 18px;
 font-size: clamp(1rem, 1.5vw, 1.2rem);
 color: #ffffff;
 cursor: pointer;
 border: 1px solid rgb(128, 122, 122);
-display: block;
 transition: 0.3s;
 }
 
@@ -259,7 +261,7 @@ box-shadow:0 5px 20px rgba(6, 26, 243, 0.966);
 }
 
 #qual-form input[type="radio"]{
-margin:40px;
+margin:20px;
 transform: scale(1.5);
 }
 /* ---------- TOP NAVBAR Graph ---------- */
