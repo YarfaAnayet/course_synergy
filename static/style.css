@@ -163,10 +163,12 @@ body{
 
 }
 .qualBox{
-    width: 90%;
-    padding: 30px;
-    min-height: 80vh;
-    margin: 40px auto;
+    width: 70%;
+    max-width: 900px;
+    padding: 25px;
+    height: 85vh;
+    margin: 20px auto;
+    overflow-y: auto;
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
