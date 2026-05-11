@@ -161,13 +161,14 @@ body{
     align-items: center;
     padding: 20px;
     background-size:auto;
+    overflow: hidden;
 
 }
 .qualBox{
     width: 500%;
-    max-width: 95%;
+    max-width: 80%;
     padding: 30px 25px;
-    height: 85vh;
+    min-height: fit-content;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
@@ -175,30 +176,29 @@ body{
     border-radius: 20px;
     box-shadow: 0 5px 10px rgb(0, 0, 0);
     border: 1px solid black;
+    overflow: hidden;
     }
 .qualBox:hover{
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(243, 6, 6, 0.5);
 }
 
-.qualBox h1{
-   font-size: 3rem;
-}
-
 .head{
     text-align: center;
-    margin-bottom: 10px;
+    margin-top: 2px;
+    margin-bottom: 5px;
     font-family: Arial black;
-    font-size:clamp(1.7rem, 4vw, 2rem);
+    font-size:clamp(1.5rem, 3vw, 1.7rem);
 }
 .head:hover{
-  font-size:clamp(1.8rem, 4.2vw, 2.2rem);
+  font-size:clamp(1.7rem, 3.5vw, 2rem);
 }
 .para{
-    font-size:clamp(1rem, 1.5vw, 1.2rem);
+    font-size:clamp(0.7rem, 2vw, 1.1rem);
     color:red;
-    margin-bottom:25px;
-    line-height: 1.5;
+    width: 98%;
+    margin-left: 2px;
+    margin-bottom:10px;
     text-align: center;
 }
 label{
@@ -208,13 +208,14 @@ label{
 }
 
 .btnn{
-    margin-top:15px;
+    display: block;
+    margin-top:30px;
     margin-left: 20px;
     background-color: #5d1261;
     color: white;
     font-size: 1rem;
     letter-spacing: 3px;
-    padding: 20px 35px;
+    padding: 10px 25px;
     text-decoration: none;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.966);
@@ -229,20 +230,23 @@ label{
 }
 
 .btnn-secondary{
+    display: block;
+    margin-top:30px;
     margin-left: 20px;
+    margin-bottom: 20px;
     font-size: 1.3rem;
 }
 
 #qual-form{
-  width: 100%;
+  width: 90%;
 }
 #qual-form label {
 display: flex;
 align-items: center;
 width: 100%;
-border-radius: 40%;
+border-radius: 40px;
 margin: 15px 0;
-padding: 12px 18px;
+padding: 1px 10px;
 font-size: clamp(1rem, 1.5vw, 1.2rem);
 color: #ffffff;
 cursor: pointer;
@@ -812,7 +816,7 @@ a:hover {
     }
 
     .head{
-        font-size: 2rem;
+        font-size: 1.7rem;
     }
 
     .para{
@@ -821,7 +825,7 @@ a:hover {
 
     #qual-form label{
         width: 95%;
-        font-size: 1rem;
+        font-size: 0.7rem;
     }
 
     .qualification-container,
