@@ -163,14 +163,14 @@ def build_semester_graph(semesters):
         ),
 
         textfont=dict(
-            size=70,
+            size=38,
             color="white"
         ),
 
         hoverinfo="text",
         hoverlabel=dict(
             font=dict(
-                size=20
+                size=10
             )
         ),
         hovertext=[f"Click to open Semester {s}" for s in semesters]
@@ -186,7 +186,8 @@ def build_semester_graph(semesters):
 
         height=max(500, len(semesters)*155),
 
-        margin=dict(l=100, r=100, t=60, b=40),
+        margin=dict(l=20, r=20, t=60, b=20),
+        width=1400,
 
         plot_bgcolor="white",
         paper_bgcolor="white"
@@ -218,12 +219,12 @@ def build_semester_subject_graph(subjects):
             color=colors[:len(subjects)],
             line=dict(color='#ffffff', width=1)
         ),
-        textfont=dict(size=70, color='white'),
+        textfont=dict(size=38, color='white'),
         hoverinfo='text',
         hovertext=[f"<b>{s['name']}</b><br>Subject ID: {s['subject_id']}<br>Click to view syllabus" for s in subjects],
         hoverlabel=dict(
             font=dict(
-                size=20
+                size=10
             )
         )
     ))
@@ -231,7 +232,7 @@ def build_semester_subject_graph(subjects):
     fig.update_layout(
     hoverlabel=dict(
         font=dict(
-            size=20,
+            size=10,
             color="white"
         ),
         bgcolor="black",
@@ -240,7 +241,7 @@ def build_semester_subject_graph(subjects):
 
     title=dict(
         text="Semester Subjects (Click to view syllabus)",
-        font=dict(size=60)
+        font=dict(size=45)
     ),
 
     xaxis_title="",
@@ -250,7 +251,7 @@ def build_semester_subject_graph(subjects):
     xaxis=dict(showticklabels=False, showgrid=False, zeroline=False),
     yaxis=dict(tickfont=dict(size=12), automargin=True),
 
-    margin=dict(l=300, r=50, t=90, b=20),
+    margin=dict(l=100, r=50, t=90, b=20),
 
     plot_bgcolor="white",
     paper_bgcolor="white"
@@ -281,7 +282,7 @@ def build_syllabus_graph(units):
 
         marker=dict(color=colors[:len(units)]),
 
-        textfont=dict(size=90, color="white"),
+        textfont=dict(size=38, color="white"),
 
         hoverinfo="text"
     ))
@@ -289,7 +290,7 @@ def build_syllabus_graph(units):
     fig.update_layout(
         hoverlabel=dict(
         font=dict(
-            size=50,
+            size=10,
             color="white"
         ),
         bgcolor="black",
@@ -297,13 +298,13 @@ def build_syllabus_graph(units):
     ),
         yaxis=dict(autorange="reversed"),
         title="Syllabus Units (Click to view content)",
-        title_font=dict(size=50),
+        title_font=dict(size=45),
 
         xaxis=dict(showticklabels=False, showgrid=False, zeroline=False),
 
         height=max(500, len(units) * 155),
 
-        margin=dict(l=200, r=50, t=80, b=30),
+        margin=dict(l=100, r=50, t=80, b=30),
 
         plot_bgcolor="white",
         paper_bgcolor="white"
