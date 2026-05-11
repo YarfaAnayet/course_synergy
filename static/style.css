@@ -83,7 +83,7 @@ body{
     color: white;
     font-size: 1.5rem;
     letter-spacing: 3px;
-    padding: 20px 35px;
+    padding: 15px 25px;
     text-decoration: none;
     border-radius: 20px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.966);
@@ -166,8 +166,7 @@ body{
     width: 90%;
     max-width: 650px;
     padding: 30px;
-    min-height: auto;
-    height: auto;
+    min-height: 80vh;
     margin: 40px auto;
     background-color: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(12px);
