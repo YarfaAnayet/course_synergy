@@ -164,7 +164,6 @@ body{
 }
 .qualBox{
     width: 90%;
-    max-width: 650px;
     padding: 30px;
     min-height: 80vh;
     margin: 40px auto;

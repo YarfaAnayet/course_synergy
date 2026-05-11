@@ -450,7 +450,7 @@ def semester_view(course_id, sem):
     )
 
 
-@app.route("/syllabus/<subject_id>")
+@app.route("/syllabus/<path:subject_id>")
 def syllabus_view(subject_id):
     courses, subjects, careers, syllabus = load_data()
 
