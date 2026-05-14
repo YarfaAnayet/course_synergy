@@ -968,7 +968,7 @@ a:hover {
 
 }
 
-@media (mim-width: 2500px){
+@media (min-width: 2500px){
   html{
     font-size: 28px;
   }
