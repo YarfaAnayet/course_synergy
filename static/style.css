@@ -13,6 +13,7 @@ body{
     flex-direction: column;
     align-items: center;
     color: #0f172a;
+    overflow: hidden;
     }
 
 .college{
@@ -807,6 +808,11 @@ a:hover {
 /* ---------- RESPONSIVE ----------*/
 @media (max-width: 768px){
 
+  .index{
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+
     .qualBox{
         width: 95%;
         padding: 20px 15px;
@@ -825,12 +831,10 @@ a:hover {
         font-size: 0.7rem;
     }
 
-    .qualification-container,
-    .selection-container,
-    .glass-container {
-        width: 90%;
-        padding: 20px;
-        margin: 20px auto;
+    .course-grid {
+      display:grid;
+      grid-template-columns: repeat(1, 1fr);
+      row-gap: 10px;
     }
 
     h1 {
@@ -949,8 +953,12 @@ a:hover {
     #career-graph,
     #sem-graph,
     #subject-graph{
-        width: 100%;
+        width: 100% !important;
         overflow-x: auto;
+    }
+    .js-plotly-plot,
+    .plot-container{
+      width: 100% !important;
     }
 
 }
