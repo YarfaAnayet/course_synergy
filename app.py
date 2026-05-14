@@ -184,7 +184,7 @@ def build_semester_graph(semesters):
             autorange="reversed"   
         ),
 
-        height=max(500, len(semesters)*155),
+        height=max(300, len(semesters)*155),
 
         margin=dict(l=20, r=20, t=60, b=20),
         width=1400,
@@ -246,10 +246,10 @@ def build_semester_subject_graph(subjects):
 
     xaxis_title="",
     yaxis_title="",
-    height=max(500, len(subjects) * 155),
+    height=max(300, len(subjects) * 155),
 
     xaxis=dict(showticklabels=False, showgrid=False, zeroline=False),
-    yaxis=dict(tickfont=dict(size=12), automargin=True),
+    yaxis=dict(autorange="reversed"),
 
     margin=dict(l=100, r=50, t=90, b=20),
 
@@ -302,7 +302,7 @@ def build_syllabus_graph(units):
 
         xaxis=dict(showticklabels=False, showgrid=False, zeroline=False),
 
-        height=max(500, len(units) * 155),
+        height=max(300, len(units) * 155),
 
         margin=dict(l=100, r=50, t=80, b=30),
 
