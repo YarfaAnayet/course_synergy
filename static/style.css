@@ -825,6 +825,9 @@ a:hover {
     .para{
         font-size: 1rem;
     }
+    .btn{
+      margin: 5px;
+    }
 
     #qual-form label{
         width: 95%;
