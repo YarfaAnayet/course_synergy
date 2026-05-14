@@ -541,8 +541,7 @@ h3 {
 #subject-graph{
   width:100%;
   max-width:3100px;
-  margin-bottom: 20px;
-  margin: 20px auto 200px auto;
+  margin: 20px auto 20px auto;
 }
 .card-box2 h3 {
   font-size:clamp(0.6em, 3vw, 1em);
@@ -951,6 +950,7 @@ a:hover {
     .btn-secondaryy{
         font-size: 1rem;
         padding: 12px 20px;
+
     }
 
     #career-graph,

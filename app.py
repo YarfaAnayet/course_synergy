@@ -247,6 +247,7 @@ def build_semester_subject_graph(subjects):
     xaxis_title="",
     yaxis_title="",
     height=max(300, len(subjects) * 120),
+    width=900,
 
     xaxis=dict(showticklabels=False, showgrid=False, zeroline=False),
     yaxis=dict(autorange="reversed"),
@@ -303,6 +304,7 @@ def build_syllabus_graph(units):
         xaxis=dict(showticklabels=False, showgrid=False, zeroline=False),
 
         height=max(300, len(units) * 120),
+        width=900,
 
         margin=dict(l=100, r=50, t=80, b=30),
 
