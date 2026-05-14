@@ -969,12 +969,64 @@ a:hover {
 }
 
 @media (mim-width: 2500px){
-  body{
-    font-size: 24px;
+  html{
+    font-size: 28px;
   }
+  
   .container,
   .containerr{
-    transform: scale(1.15);
-    transform-origin: center top;
+    min-height: 75vh;
+    padding: 3vb 3vw;
   }
+  .qualBox{
+    width: 70%;
+    max-width: 2600;
+    padding: 5vh 4vw;
+    border-radius: 40px;
+  }
+  .head{
+    font-size: 5rem !important;
+    margin-bottom: 2vh;
+  }
+  .para{
+    font-size: 1.8rem !important;
+    line-height: 1.7;
+    width: 100%;
+  }
+ label{
+        width: 100%;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        font-size: 2rem;
+        border-radius: 50px;
+    }
+
+    input[type="radio"]{
+        transform: scale(2);
+        margin-right: 20px;
+    }
+
+    .btnn,
+    .btn a{
+        font-size: 2rem !important;
+        padding: 1rem 3rem !important;
+        border-radius: 30px;
+    }
+
+    h1{
+        font-size: 6rem !important;
+    }
+
+    h2{
+        font-size: 3rem !important;
+    }
+
+    p{
+        font-size: 1.8rem !important;
+    }
+
+    .logo img{
+        width: 500px;
+        height: 500px;
+    }
 }
