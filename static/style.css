@@ -703,6 +703,11 @@ h3 {
 .js-plotly-plot .plotly .modebar-btn{
     pointer-events: auto !important;
 }
+
+.modebar{
+    top: 55px;
+    right: 10px;
+}
 /* ---------- content---------- */
 /* GRAPH */
 .sem-name{
