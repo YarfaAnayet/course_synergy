@@ -813,6 +813,7 @@ a:hover {
 
     body{
         overflow-x: hidden;
+        width: 100%;
     }
 
     /* Home Page */
@@ -911,21 +912,21 @@ a:hover {
     /* Course Selection Page */
 
     .course-grid{
+      display: grid !important;
+      grid-template-columns: repeat(1, 1fr) !important;
 
-        grid-template-columns: repeat(1, 1fr) !important;
+      width: 100% !important;
+      padding: 10px !important;
+      margin: 20px auto !important;
 
-        width: 100% !important;
-        padding: 10px !important;
-        margin: 20px auto !important;
-
-        justify-items: center !important;
-        row-gap: 28px !important;
+      justify-items: center !important;
+      row-gap: 28px !important;
     }
 
     .course-tile{
 
         width: 90% !important;
-        max-width: 350px !important;
+        max-width: 100% !important;
         min-height: 220px !important;
 
         margin: 0 auto !important;
