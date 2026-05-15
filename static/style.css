@@ -1012,9 +1012,7 @@ a:hover {
     }
 
     .career-modal{
-        width: 80% !important;
-        max-width: 180px;
-        min-height: 110px;
+        width: 100% !important;
         margin: auto;
     }
 
