@@ -952,7 +952,7 @@ a:hover {
         padding: 12px;
         margin-top: 15px !important;
         display: block;
-        text-align: center;
+        text-align: center !important;
     }
 
     .selected{
@@ -978,12 +978,12 @@ a:hover {
         text-align: center;
     }
 
-    .OverviewAndSkill p,
-    .subject-info top-info p,
-    .subject-info bottom-info p{
+    .c-info,
+    .subject-info{
         font-size: 1rem !important;
         width: 100%;
         word-break: break-word;
+        text-align: center;
     }
     .topbar-title{
       font-size: 1.7rem;
@@ -999,7 +999,7 @@ a:hover {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-        gap: 15px;
+        gap: 30px;
     }
 
     .career-card{
