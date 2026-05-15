@@ -26,7 +26,37 @@
     <script>
         const subjDataEl = document.getElementById('subj-data');
         const subjJSON = JSON.parse(subjDataEl.textContent);
-        Plotly.newPlot('subject-graph', subjJSON.data, subjJSON.layout);
+        const isMobile = window.innerWidth <= 768;
+
+const layout = {
+    
+    paper_bgcolor: 'rgba(0,0,0,0)',   // removes outer white background
+    plot_bgcolor: 'rgba(0,0,0,0)',    // removes inner white background
+
+    font: {
+        color: 'white',
+        size: isMobile ? 18 : 12   // bigger font on phone
+    },
+
+    margin: {
+        l: 40,
+        r: 20,
+        t: 60,
+        b: 40
+    }
+};
+        Plotly.newPlot(
+    'subject-graph',
+    graph.data,
+    graph.layout,
+    {
+        responsive: true,
+        displayModeBar: false,
+        scrollZoom: false,
+        doubleClick: false,
+        staticPlot: true
+    }
+);
         
         const subjDiv = document.getElementById('subject-graph');
         subjDiv.on('plotly_click', function(data) {

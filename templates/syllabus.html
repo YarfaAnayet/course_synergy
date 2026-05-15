@@ -46,10 +46,38 @@
   <script>
     const dataEl = document.getElementById('syllabus-data');
     const graphJSON = JSON.parse(dataEl.textContent);
+    const isMobile = window.innerWidth <= 768;
 
-    Plotly.newPlot('syllabus-graph', graphJSON.data, graphJSON.layout,
-    {responsive: true}
-    );
+const layout = {
+    
+    paper_bgcolor: 'rgba(0,0,0,0)',   // removes outer white background
+    plot_bgcolor: 'rgba(0,0,0,0)',    // removes inner white background
+
+    font: {
+        color: 'white',
+        size: isMobile ? 18 : 12   // bigger font on phone
+    },
+
+    margin: {
+        l: 40,
+        r: 20,
+        t: 60,
+        b: 40
+    }
+};
+
+    Plotly.newPlot(
+    'syllabus-graph',
+    graph.data,
+    graph.layout,
+    {
+        responsive: true,
+        displayModeBar: false,
+        scrollZoom: false,
+        doubleClick: false,
+        staticPlot: true
+    }
+);
 
     const graphDiv = document.getElementById('syllabus-graph');
     const overlay = document.getElementById("overlay");
