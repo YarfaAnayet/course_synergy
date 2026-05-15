@@ -865,7 +865,7 @@ a:hover {
         font-size: 1rem !important;
         line-height: 1.5;
         margin-top: 10px;
-        text-align: center;
+        text-align: center !important;
     }
 
     .btn{
@@ -948,14 +948,22 @@ a:hover {
     }
 
     .btn-view,
-    .btn-secondary-view
-    .btn-secondary{
+    .btn-secondary-view{
         width: 85%;
         font-size: 1rem !important;
         padding: 12px;
         margin-top: 15px !important;
         display: block;
         text-align: center !important;
+    }
+    
+    .btn-secondary{
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        text-align: center !important;
+        width: 70% !important;
+        margin: 20px auto !important;
     }
 
     .selected{
@@ -984,45 +992,63 @@ a:hover {
     .c-info,
     .subject-info{
         font-size: 1rem !important;
-        width: 100%;
-        word-break: break-word;
+        line-height: 1.8 !important;
+        width: 100% !important;
         text-align: center !important;
     }
     .topbar-title{
       font-size: 1.7rem;
       margin-top: 20px;
+      letter-spacing: 2px !important;
     }
     .top-links{
       font-size: 1rem;
-      margin-bottom: 30px;      
+      margin-top: 10px;
+      margin-bottom: 50px;      
     }
 
     /* CAREER CARDS */
 
-    .career-options{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-        gap: 30px;
-        width: 50% !important;
-        max-width: 180px;
-        min-height: 110px;
-        margin: auto;
-    }
+    .career-modal-content{
 
-    .career-modal{
-        width: 95% !important;
-        max-width: 95% !important;
+        width: 92% !important;
+        max-width: 92% !important;
 
-        left: 50%;
-        transform: translateX(-50%);
+        padding: 25px 20px !important;
 
-        padding: 20px 15px;
+        margin: auto !important;
+
         border-radius: 20px;
     }
-    .career-modal-content{
-        word-break: break-word;
+
+    #career-result{
+
+        width: 100% !important;
+
+        font-size: 1.2rem !important;
+
+        line-height: 1.7 !important;
+
+        text-align: center;
+
+        word-break: normal !important;
+
+        overflow-wrap: break-word;
+
+        white-space: normal !important;
+    }
+
+    #career-result p{
+
+        margin-bottom: 25px;
+    }
+
+    .close-btn{
+
+        font-size: 2rem;
+
+        top: 15px;
+        right: 20px;
     }
 
     /* SEMESTER FLOW */
