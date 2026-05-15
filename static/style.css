@@ -1008,6 +1008,22 @@ a:hover {
     }
 
     /* CAREER CARDS */
+    .career-options{
+        display: flex !important;
+        flex-direction: column !important;
+
+        align-items: center !important;
+        gap: 20px !important;
+
+        width: 100% !important;
+    }
+
+    .career-options button{
+        width: 85% !important;
+        max-width: 320px !important;
+
+        margin: 0 auto !important;
+    }
 
     .career-modal-content{
 
