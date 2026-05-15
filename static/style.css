@@ -1003,7 +1003,7 @@ a:hover {
     }
 
     .career-card{
-        width: 42% !important;
+        width: 50% !important;
         max-width: 170px;
         min-height: 110px;
         margin: auto;
@@ -1021,9 +1021,8 @@ a:hover {
     .js-plotly-plot,
     .plot-container,
     .svg-container{
-        width: 100% !important;
-        max-width: 100% !important;
-        overflow-x: auto !important;
+        width: 90% !important;
+        max-width: 90% !important;
     }
 
     canvas,
