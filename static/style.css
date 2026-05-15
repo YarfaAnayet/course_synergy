@@ -695,6 +695,14 @@ h3 {
 
 
 }
+
+.js-plotly-plot .plotly .modebar{
+    opacity: 1 !important;
+}
+
+.js-plotly-plot .plotly .modebar-btn{
+    pointer-events: auto !important;
+}
 /* ---------- content---------- */
 /* GRAPH */
 .sem-name{
