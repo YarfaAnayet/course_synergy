@@ -187,7 +187,8 @@ def build_semester_graph(semesters):
         height=max(300, len(semesters)*120),
 
         margin=dict(l=20, r=20, t=60, b=20),
-        width=900,
+        width=None,
+        autosize=True,
 
         plot_bgcolor="white",
         paper_bgcolor="white"
